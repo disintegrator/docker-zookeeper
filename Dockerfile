@@ -10,7 +10,7 @@ RUN wget -q -O /opt/zookeeper/3.4.6.tar.gz.asc http://www.us.apache.org/dist/zoo
 RUN gpg --import /opt/zookeeper/KEYS
 RUN gpg --verify /opt/zookeeper/3.4.6.tar.gz.asc
 RUN tar -xzf /opt/zookeeper/3.4.6.tar.gz -C /opt/zookeeper/
-RUN cp /opt/zookeeper/zookeeper-3.4.6/conf/zoo_sample.cfg /opt/zookeeper/zookeeper-3.4.6/conf/zoo.cfg
+ADD conf /opt/zookeeper/zookeeper-3.4.6/conf
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
